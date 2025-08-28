@@ -105,6 +105,9 @@
                     </h2>
                   </a>
                 </div>
+                {% if product.metafields.custom.custom_subtitle %}
+                  <p class="product-subtitle">{{ product.metafields.custom.custom_subtitle }}</p>
+                {% endif %}
               {%- when 'price' -%}
                 <div class="price-row">
                   <div id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
@@ -780,6 +783,11 @@
     {
       "type": "title",
       "name": "t:sections.main-product.blocks.title.name",
+      "limit": 1
+    },
+    {
+      "type": "subtitle",
+      "name": "t:sections.main-product.blocks.subtitle.name",
       "limit": 1
     },
     {

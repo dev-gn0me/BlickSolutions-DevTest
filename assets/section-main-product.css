@@ -269,13 +269,6 @@ a.product__text {
   margin-top: -1.5rem;
 }
 
-.product__subtitle {
-  font-size: 1.2rem;
-  color: rgba(var(--color-foreground), 0.75);
-  margin-bottom: 0.5rem;
-}
-
-
 .product__text.caption-with-letter-spacing + .product__title {
   margin-top: 0;
 }
