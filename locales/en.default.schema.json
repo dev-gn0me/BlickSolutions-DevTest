@@ -1957,6 +1957,9 @@
         "title": {
           "name": "Title"
         },
+        "subtitle": {
+          "name": "Subtitle"
+        },
         "price": {
           "name": "Price"
         },

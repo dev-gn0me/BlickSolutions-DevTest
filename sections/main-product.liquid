@@ -100,14 +100,19 @@
                 <div class="product__title" {{ block.shopify_attributes }}>
                   <h1>{{ product.title | escape }}</h1>
                   <a href="{{ product.url }}" class="product__title">
-                    <h2 class="h1">
+                    <h1 class="h1">
                       {{ product.title | escape }}
-                    </h2>
+                    </h1>
                   </a>
                 </div>
-                {% if product.metafields.custom.custom_subtitle %}
-                  <p class="product-subtitle">{{ product.metafields.custom.custom_subtitle }}</p>
-                {% endif %}
+              {%- when 'subtitle' -%}
+                <div class="product__subtitle" {{ block.shopify_attributes }}>
+                  {% if product.metafields.custom.custom_subtitle != blank %}
+                    <h2 class="product-subtitle">
+                      {{ product.metafields.custom.custom_subtitle | escape }}
+                    </h2>
+                  {% endif %}
+                </div>
               {%- when 'price' -%}
                 <div class="price-row">
                   <div id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
@@ -788,7 +793,8 @@
     {
       "type": "subtitle",
       "name": "t:sections.main-product.blocks.subtitle.name",
-      "limit": 1
+      "limit": 1,
+      "settings": []
     },
     {
       "type": "price",
